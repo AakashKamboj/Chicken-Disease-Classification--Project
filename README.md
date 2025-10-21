@@ -150,7 +150,7 @@ docker login chickenapp.azurecr.io
 docker push chickenapp.azurecr.io/chicken:latest
 
 
-## Deployment Steps:
+## Deployment Steps :
 
 1. Build the Docker image of the Source Code
 2. Push the Docker image to Container Registry
