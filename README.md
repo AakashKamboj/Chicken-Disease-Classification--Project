@@ -1,5 +1,56 @@
 # Chicken-Disease-Classification--Project
 
+🧠 My Contributions
+🚀 This repository is a customized and enhanced version of EntBappy’s Chicken Disease Classification Project.
+I debugged TensorFlow issues, upgraded the environment, and implemented CI/CD for AWS deployment.
+�
+�
+￼ ￼ ￼ ￼ ￼ 
+
+🚀 Technical Enhancements
+Environment Upgrade: Migrated from Python 3.8 → Python 3.9, ensuring modern dependency support and compatibility.
+Docker Modernization: Updated base image from python:3.8-slim-buster → python:3.9-bookworm, improving build security and reducing vulnerabilities.
+
+TensorFlow Fixes:
+Fixed eager execution error:
+Copy code:
+Python:
+
+import tensorflow as tf
+tf.compat.v1.enable_eager_execution()
+tf.config.run_functions_eagerly(True)
+
+Fixed optimizer mismatch warning by recompiling with fresh Adam optimizer:
+Copy code:
+Python:
+
+from tensorflow.keras.optimizers import Adam
+self.model.compile(
+    optimizer=Adam(learning_rate=0.001),
+    loss="categorical_crossentropy",
+    metrics=["accuracy"]
+)
+
+- Training Pipeline Debugging: Ensured correct function sequence and callbacks (get_base_model(), train_valid_generator(), train()), improving model reproducibility.
+
+⚙ CI/CD & DevOps Improvements
+
+- Implemented GitHub Actions CI/CD pipeline for automated Docker build and deployment.
+- Configured OIDC authentication and self-hosted runner for secure deployments on AWS EC2.
+- Successfully deployed containerized app on AWS EC2 t2.large instance (tested under a free-tier account).
+- Optimized workflow for low-cost deployment by managing instance size, resources, and container lifecycle.
+
+🧩 Impact
+
+- Resolved all major TensorFlow runtime and optimizer issues.
+- Achieved end-to-end MLOps automation (training → container → deployment).
+- Demonstrated capability to debug and scale an open-source project with AWS DevOps practices.
+
+🐔 Chicken Disease Classification Project
+(Original project by EntBappy – retained for reference)
+🎯 Goal: Identify chicken diseases using image-based deep learning.
+📦 Base Author: EntBappy
+
 
 ## Workflows
 
@@ -20,12 +71,12 @@
 Clone the repository
 
 ```bash
-https://github.com/entbappy/Chicken-Disease-Classification--Project
+https://github.com/Aakashkamboj/Chicken-Disease-Classification--Project
 ```
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n cnncls python=3.8 -y
+conda create -n cnncls python=3.9 -y
 ```
 
 ```bash
@@ -156,3 +207,62 @@ docker push chickenapp.azurecr.io/chicken:latest
 2. Push the Docker image to Container Registry
 3. Launch the Web App Server in Azure 
 4. Pull the Docker image from the container registry to Web App server and run 
+
+🧬 Project Overview
+This project is an end-to-end deep learning pipeline for classifying chicken diseases using CNN and Transfer Learning.
+Main Components:
+Data versioning with DVC
+Model training using TensorFlow/Keras
+Containerization with Docker
+CI/CD using GitHub Actions
+Cloud deployment on AWS EC2
+
+🧰 Tech Stack
+
+Category
+Tools/Tech
+Language
+Python 3.9
+Frameworks
+TensorFlow, Keras
+Versioning
+Git, DVC
+Containerization
+Docker
+Deployment
+AWS EC2
+Automation
+GitHub Actions
+IDE/Terminal
+VS Code, Git Bash
+
+⚡ Installation
+Copy code
+Bash
+conda create -n cnncls python=3.9 -y
+conda activate cnncls
+pip install -r requirements.txt
+
+🐳 Docker Setup
+Copy code
+Bash
+docker build -t chicken-classifier:latest .
+docker run -p 8080:8080 chicken-classifier:latest
+
+🚀 Deployment
+This project supports automated CI/CD through GitHub Actions and can be deployed on AWS EC2 using Docker.
+👨‍💻 Author
+Aakash Kamboj
+
+🪪 License
+Licensed under the MIT License.
+See the LICENSE file for details.
+
+🪪 License
+Licensed under the MIT License.
+See the LICENSE file for details.
+⭐ Support
+If you find this repository helpful, give it a ⭐ on GitHub!
+“Debugging teaches you more than tutorials ever will.” 💡⭐ Support
+If you find this repository helpful, give it a ⭐ on GitHub!
+“Debugging teaches you more than tutorials ever will.” 💡
