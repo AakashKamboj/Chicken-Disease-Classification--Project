@@ -1,8 +1,17 @@
-# Chicken-Disease-Classification--Project
+🐔 Chicken-Disease-Classification--Project
 
 🧠 My Contributions
 🚀 This repository is a customized and enhanced version of EntBappy’s Chicken Disease Classification Project.
 I debugged TensorFlow issues, upgraded the environment, and implemented CI/CD for AWS deployment.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9-blue?logo=python" />
+  <img src="https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow" />
+  <img src="https://img.shields.io/badge/Docker-Enabled-blue?logo=docker" />
+  <img src="https://img.shields.io/badge/AWS-t2.large-success?logo=amazonaws" />
+  <img src="https://img.shields.io/badge/CI/CD-GitHub%20Actions-black?logo=githubactions" />
+</p>
+
 �
 �
 ￼ ￼ ￼ ￼ ￼ 
@@ -13,16 +22,12 @@ Docker Modernization: Updated base image from python:3.8-slim-buster → python:
 
 TensorFlow Fixes:
 Fixed eager execution error:
-Copy code:
-Python:
 
 import tensorflow as tf
 tf.compat.v1.enable_eager_execution()
 tf.config.run_functions_eagerly(True)
 
 Fixed optimizer mismatch warning by recompiling with fresh Adam optimizer:
-Copy code:
-Python:
 
 from tensorflow.keras.optimizers import Adam
 self.model.compile(
@@ -237,14 +242,12 @@ IDE/Terminal
 VS Code, Git Bash
 
 ⚡ Installation
-Copy code
 Bash
 conda create -n cnncls python=3.9 -y
 conda activate cnncls
 pip install -r requirements.txt
 
 🐳 Docker Setup
-Copy code
 Bash
 docker build -t chicken-classifier:latest .
 docker run -p 8080:8080 chicken-classifier:latest
@@ -254,15 +257,6 @@ This project supports automated CI/CD through GitHub Actions and can be deployed
 👨‍💻 Author
 Aakash Kamboj
 
-🪪 License
-Licensed under the MIT License.
-See the LICENSE file for details.
-
-🪪 License
-Licensed under the MIT License.
-See the LICENSE file for details.
-⭐ Support
+💡⭐ Support
 If you find this repository helpful, give it a ⭐ on GitHub!
-“Debugging teaches you more than tutorials ever will.” 💡⭐ Support
-If you find this repository helpful, give it a ⭐ on GitHub!
-“Debugging teaches you more than tutorials ever will.” 💡
+“Debugging teaches you more than tutorials ever will.” 
